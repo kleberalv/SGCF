@@ -1,9 +1,4 @@
 <?php
-/* ######### Classe 6######### */
-/* #Este arquivo foi gerado em 24/05/2013 10:12:47pelo gerador de aplicativos PHP,# */
-/* #desenvolvido por Wellington G. de Sousa.# */
-/* #e-mail:wellingtonsousa@pop.com.br# */
-/* ############################################ */
 
 class Usuario{
     Private $id;
