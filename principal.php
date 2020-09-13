@@ -3,15 +3,16 @@ session_name('sgcf');
 session_start();
 error_reporting(0);
 if (($_SESSION['logado']=="N")||empty($_SESSION['logado'])){
-	$_SESSION['logado']="S";
-	header("location:index.php");
-	exit();
+  $_SESSION['logado']="S";
+  header("location:index.php");
+  exit();
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  
   <title>SGCF - Sistema de Gerenciamento e Controle de Frota</title>
   <link rel="stylesheet" href="Formatacao/reset.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +38,7 @@ if (($_SESSION['logado']=="N")||empty($_SESSION['logado'])){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="images/menu.png" style="width: 32px;"></a>
+      <a class="navbar-brand" href="#"><img src="images/menu.png" style="width: 32px;">  </a>
       <!-- <a class="navbar-brand" href="#">WebSiteName</a>  -->
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -54,13 +55,13 @@ if (($_SESSION['logado']=="N")||empty($_SESSION['logado'])){
          <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">#<span class="caret"></span></a>
           <ul class="dropdown-menu">
-          	 <li><a href="#">#</a></li>
+             <li><a href="#">#</a></li>
           </ul>
         </li>
          <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">#<span class="caret"></span></a>
           <ul class="dropdown-menu">
-          	 <li><a href="#" target="_blank">#</a></li>
+             <li><a href="#" target="_blank">#</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -90,7 +91,7 @@ if (($_SESSION['logado']=="N")||empty($_SESSION['logado'])){
     <table class="layout" width="100%" >
         <tr>
             <td valign="top">
-                <div>				
+                <div>       
                     <?php
                         switch ($_GET['menu'])
                         {
@@ -99,7 +100,7 @@ if (($_SESSION['logado']=="N")||empty($_SESSION['logado'])){
                                 break;
                             case 1:
                                   include('listar_usuario.php');
-                                  break;    	
+                                  break;      
                         }
                     ?>
                 </div>

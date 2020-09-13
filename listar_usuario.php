@@ -41,7 +41,7 @@ $pdo = new PDO(DSN, USER, SENHA);
                         <th>Nome</th>
                         <th>Usuario</th>
                         <th>Email</th>
-                        <th>Acoes</th>
+                        <th>Ações</th>
                     </tr>
                 </thead >
                         <tbody class="corpo-tabela">

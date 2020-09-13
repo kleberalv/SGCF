@@ -36,6 +36,8 @@ $logado=$_GET['logado'];
                   print'<center><h5 class="text text-danger">Não foi possível autenticar</center></h5>';
                   print'<br>';
               }?>
+              <h1> <center> SGCF </center> </h1>
+              <br>
               <form action="backend/logar.php" method="post">
               <div class="form-label-group">
                 <input type="text" name="usuario" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
