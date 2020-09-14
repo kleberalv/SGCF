@@ -25,11 +25,11 @@
           <div class="card-body">
               <center></center>
               <br>
-              <h1> <center> Usuário cadastrado com sucesso!</center> </h1>
+              <h1> <center> Operação realizada com sucesso!</center> </h1>
               <br>
               <br>
-            <form action="index.php">
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Início</button>
+            <form action="principal.php">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Voltar</button>
             </form>
           </div>
         </div>

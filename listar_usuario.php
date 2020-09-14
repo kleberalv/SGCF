@@ -53,7 +53,7 @@ $pdo = new PDO(DSN, USER, SENHA);
                                     <td>
                                         <a class=acao href="principal.php?menu=5&id=<?php echo $linha['id']?>"><button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit">&nbsp;</i>Editar</button></a>
                                         &nbsp;|&nbsp;  
-                                        <a class=acao href="delete_usuarios.php?id=<?php echo $linha['id']?>"  onclick="if(!confirm('Deseja realmente excluir o usuario?')) return false;"><button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash">&nbsp;</i> Excluir</button></a>
+                                        <a class=acao href="delete_usuario.php?id=<?php echo $linha['id']?>"  onclick="if(!confirm('Deseja realmente excluir o usuario?')) return false;"><button type="button" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash">&nbsp;</i> Excluir</button></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
