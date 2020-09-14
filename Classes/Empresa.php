@@ -5,13 +5,9 @@
 /* #e-mail:wellingtonsousa@pop.com.br# */
 /* ############################################ */
 
-class Usuario{
+class Empresa{
     Private $id;
-    Private $nome;
-    Private $email;
-    Private $usuario;
-    Private $senha;
-    Private $situacao;
+    Private $cnpj;
 
     private $pdo;
     public $erros;
@@ -25,69 +21,52 @@ class Usuario{
         $this->id = $id;
     }
         
-    public function setUsuarioCompleto($id, $nome, $usuario, $email){
+    public function setUsuarioCompleto($id, $nome, $cnpj){
         $this->id= $id;
         $this->nome= $nome;
-        $this->usuario= $usuario;
-        $this->email= $email;
-    }
+        $this->cnpj= $cnpj;
+        }
 
-    public function setUsuario($usuario){
-        $this->usuario= $usuario;
-    }
-
-    public function setSenha($senha){
-        $this->senha= $senha;
-    }
-
-    public function setEmail($email){
-        $this->email = $email;
+    public function setCnpj($cnpj){
+        $this->cnpj= $cnpj;
     }
 
     public function setNome($nome){
         $this->nome = $nome;
     }
 
-    public function autentica(){
-      $usuario = $this->usuario;
+    public function nome(){
+      $nome = $this->nome;
 
-      $sql = "SELECT * from usuarios where usuario = '$usuario'"; 
+      $sql = "SELECT * from empresa where nome = '$nome/'"; 
       return $this->pdo->query($sql)->fetch();
 
     }
 
-    public function recuperarPorUsuario($usuario){
-        $sql = "SELECT * from usuarios where usuario = '$usuario'";
+    public function recuperarPorCnpj($cnpj){
+        $sql = "SELECT * from empresa where cnpj = '$cnpj'";
         return $this->pdo->query($sql)->fetch();
     }
 
     public function salvar(){
            if(empty($this->id)){
          //incluir
-             $sql ="INSERT INTO usuarios
+             $sql ="INSERT INTO empresa
                     (
                       nome,
-                      email,
-                      senha,
-                      usuario,
-                      situacao
+                      cnpj
                     )
                     VALUES
                     (
                      '$this->nome',
-                     '$this->email',
-                     '$this->senha',
-                     '$this->usuario',
-                     'bloqueado'
+                     '$this->cnpj'
                      )";
           }else{
           //alterar
-              $sql = "UPDATE usuarios
+              $sql = "UPDATE empresa
                      SET
                       nome='$this->nome',
-                      email='$this->email',
-                      senha='$this->senha',
-                      usuario='$this->usuario'
+                      cnpj='$this->cnpj'
                      WHERE id = '$this->id'";
            }
            $resultado = $this->pdo->exec($sql);
@@ -99,12 +78,12 @@ class Usuario{
     }
 
     public function listar(){
-      $sql="SELECT * from usuarios";
+      $sql="SELECT * from empresa";
       return $this->pdo->query($sql)->fetchAll();
     }
 
         public function deletar(){
-      $sql="DELETE FROM usuarios WHERE id = '$this->id'";
+      $sql="DELETE FROM empresa WHERE id = '$this->id'";
       if($this->pdo->exec($sql)){
                return 1;
            }else{
